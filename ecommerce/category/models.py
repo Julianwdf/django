@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Category(models.Model):
@@ -11,6 +12,10 @@ class Category(models.Model):
         verbose_name = 'category'
         verbose_name_plural = 'categories'
 
+    # this is a custom function
+    def get_url(self):
+        return reverse('products_by_category', args=[self.slug]) # self refers to Category model above
+        # products_by_category is taken from urls.py under store "name='products_by_category'"
 
     def __str__(self):
         return self.category_name
