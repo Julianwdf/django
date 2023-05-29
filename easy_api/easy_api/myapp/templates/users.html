@@ -31,7 +31,10 @@
             <th>Name</th>
             <th>Username</th>
             <th>Email</th>
-            <th>Phone</th>
+            <th>City</th>
+            <th>Street</th>
+            <th>Suite</th>
+            <th>Zipcode</th>
           </tr>
         </thead>
         <tbody>
@@ -41,7 +44,10 @@
             <td>{{ user.name }}</td>
             <td>{{ user.username }}</td>
             <td>{{ user.email }}</td>
-            <td>{{ user.phone }}</td>
+            <td>{{ user.address.city }}</td>
+            <td>{{ user.address.street }}</td>
+            <td>{{ user.address.suite }}</td>
+            <td>{{ user.address.zipcode }}</td>
           </tr>
           {% endfor %}
         </tbody>
